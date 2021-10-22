@@ -1,0 +1,11 @@
+# Planned frameworks
+- Python
+  - Flask
+    - [Official Documentation](https://flask.palletsprojects.com/en/2.0.x/)
+    - [Other Documentation](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
+    - [Barebones Example](https://gitlab.com/jaredamcdon/python-projects/-/tree/master/stock-analytics/src/flask_app)
+- Javascript/Frontend
+  - Bootstrap
+    - [Official Documentation](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+    - [First Party Cheat Sheet](https://getbootstrap.com/docs/5.1/examples/cheatsheet/)
+    - [Third Party Cheat Sheet](https://bootstrap-cheatsheet.themeselection.com/)
