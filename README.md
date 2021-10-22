@@ -9,3 +9,7 @@
     - [Official Documentation](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
     - [First Party Cheat Sheet](https://getbootstrap.com/docs/5.1/examples/cheatsheet/)
     - [Third Party Cheat Sheet](https://bootstrap-cheatsheet.themeselection.com/)
+  - Vue (2.6)
+    - [Official Documentation](https://vuejs.org/v2/guide/installation.html)
+    - [DevDocs](https://devdocs.io/vue~2/)
+    - [Some Jared Examples](https://codepen.io/jamcdon)
