@@ -26,19 +26,27 @@ DELIMITER ;
 
 
 DELIMITER $$
-CREATE PROCEDURE updateExport
-(IN inplayerID)
+CREATE PROCEDURE updateExport(IN inPlayerID INT)
 
 BEGIN
 	# 3 min
-	SELECT AVG(streamData.score) FROM streamData
+	SET @temp_three:=
+	(SELECT AVG(streamData.score) FROM streamData
 	INNER JOIN streamDataPlayer ON streamDataPlayer.streamID = streamData.ID
 	WHERE streamDataPlayer.playerID = inPlayerID
-	AND streamData.date_time >= NOW() - INTERVAL 3 MINUTE;
+	AND streamData.date_time >= NOW() - INTERVAL 3 MINUTE);
 
 	#overall
-	SELECT AVG(streamData.score) FROM streamData
+	SET @temp_overall:=
+	(SELECT AVG(streamData.score) FROM streamData
 	INNER JOIN streamDataPlayer ON streamDataPlayer.streamID = streamData.ID
-	WHERE streamDataPlayer.playerID = inPlayerID;
+	WHERE streamDataPlayer.playerID = inPlayerID);
+
+	UPDATE export 
+	SET 
+		export.aggregate3 = @temp_three,
+		export.overall = @temp_overall
+	WHERE
+		playerID = inPlayerID;
 END$$
 DELIMITER ;

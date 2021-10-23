@@ -31,3 +31,5 @@ CREATE TABLE export (
     overall 	DECIMAL NOT NULL ,
     PRIMARY KEY (ID)
 );
+
+SET SQL_SAFE_UPDATES=0;

@@ -9,13 +9,17 @@ INNER JOIN streamDataPlayer ON streamDataPlayer.streamID = streamData.ID
 WHERE streamDataPlayer.playerID = 2
 AND streamData.date_time >= NOW() - INTERVAL 3 MINUTE;
 
-SELECT AVG(streamData.score) FROM streamData
+SET @three:=
+	(SELECT AVG(streamData.score) FROM streamData
 	INNER JOIN streamDataPlayer ON streamDataPlayer.streamID = streamData.ID
 	WHERE streamDataPlayer.playerID = 2
-	AND streamData.date_time >= NOW() - INTERVAL 3 MINUTE;
+	AND streamData.date_time >= NOW() - INTERVAL 3 MINUTE);
+SELECT @three;
 
 CALL frontendCall();
 
 CALL getPlayers();
 
-CALL updateExport();
+CALL updateExport(2);
+
+select * from export;
