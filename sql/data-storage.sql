@@ -12,6 +12,7 @@ CREATE TABLE streamDataPlayer (
 CREATE TABLE streamData (
     ID 			INTEGER AUTO_INCREMENT NOT NULL ,
     score 		DECIMAL NOT NULL ,
+    date_time	DATETIME DEFAULT NOW(),
     PRIMARY KEY (ID)
 );
 
