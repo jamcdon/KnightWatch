@@ -5,7 +5,7 @@ USE KnightWatch;
 CREATE TABLE streamDataPlayer (
     ID 			INTEGER NOT NULL ,
     streamID 	INTEGER NOT NULL REFERENCES streamData(ID),
-    playerID 	INTEGER NOT NULL ,
+    playerID 	INTEGER NOT NULL REFERENCES player(ID),
     PRIMARY KEY (ID)
 );
 
@@ -25,7 +25,7 @@ CREATE TABLE player (
 
 CREATE TABLE export (
     ID 			INTEGER NOT NULL ,
-    playerID 	INTEGER NOT NULL ,
+    playerID 	INTEGER NOT NULL REFERENCES player(ID),
     aggregate3 	DECIMAL NOT NULL ,
     overall 	DECIMAL NOT NULL ,
     PRIMARY KEY (ID)

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dashboard | KnightWatch</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="./bootstrap.min.css" rel="stylesheet">
+        <link href="./style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="app">
+            <header class="d-flex p-2 bg-light">
+                <h2 class="h2 text-primary"><i class="fas fa-chair"></i> KnightWatch &emsp;</h2>
+                <div class="dropdown">
+                    <button class="btn btn-secondary btn-md dropdown-toggle" id="dropdownMenu2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Sort | {{currentSort}}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li><button v-for="item in sort" class="dropdown-item" type="button">
+                            {{item}}
+                        </button></li>
+                    </ul>
+                </div>
+            </header>
+            <div id="table">
+                <table class='table'>
+                    <thead class='table'>
+                        <tr>
+                            <th scope='col'>#</th>
+                            <th scope='col'>Name</th>
+                            <th scope='col'>Base</th>
+                            <th scope='col'>Score</th>
+                            <th scope='col'>Game Average</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="player in players"
+                            v-bind:class="player.class">
+                            <td>{{player.number}}</td>
+                            <td>{{player.name}}</td>
+                            <td>{{player.baseline}}</td>
+                            <td>{{player.score}}</td>
+                            <td>{{player.aggregate}}</td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+    <footer>
+
+    </footer>
+    
+    <script src="./popper.min.js"></script>
+    <script src=".vue2.6.min.js"></script>
+    <script src="./script.js"></script>
+</html>
