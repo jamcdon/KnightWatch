@@ -1,6 +1,6 @@
 from flask_app import app
 
-#import flask_app.config as conf
+import flask_app.config as conf
 
 from flask import jsonify
 
@@ -10,4 +10,4 @@ def index():
 
 @app.route('/post/<playerid>/<score>')
 def ingest():
-    return()
+    headers_raw = conf.knight_db.put(f'CALL appendStream({playerid},{score});')

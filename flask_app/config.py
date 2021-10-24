@@ -7,13 +7,7 @@ with open('./flask_app/config.json') as conf_file:
     config = json.load(config_file)
     db_config = config['databases']
 
-knight_db = database(
-    host_name = db_config['knight']['host'],
-    port_num = db_config['knight']['port'],
-    db_name = db_config['knight']['name'],
-    user_name = db_config['knight']['user'],
-    user_pass = db_config['knight']['pass']
-)
+
 
 class database:
     def __init__(self, host_name, port_num, db_name, user_name, user_pass):
@@ -49,3 +43,25 @@ class database:
             return(result)
         except Error as err:
             print(f'Error: {err}')
+    def put(self,query):
+        try:
+            cursor = self.database_connection.cursor()
+        except:
+            self.makeConn()
+            cursor = self.database_connection.cursor()
+        connection = self.database_connection
+            
+        try:
+            cursor.execute(query)
+            connection.commit()
+        except Error as err:
+            print(f"Error: '{err}'")
+
+
+knight_db = database(
+    host_name = db_config['knight']['host'],
+    port_num = db_config['knight']['port'],
+    db_name = db_config['knight']['name'],
+    user_name = db_config['knight']['user'],
+    user_pass = db_config['knight']['pass']
+)
