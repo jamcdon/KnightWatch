@@ -1,0 +1,3 @@
+toreturn = [["TY Hilton",13,"44","57","45"],["Eric Fisher",79,"32","48","30"],["Chris Reed",62,"57","56","55"],["Ryan Kelly",78,"74","69","75"],["Mark Glowinski",64,"22","35","20"],["Braden Smith",72,"43","38","41"],["Jack Doyle",84,"46","45","47"],["Mo Alie-Cox",81,"44","49","45"],["Zach Pascal",14,"30","41","31"],["Michael Pittman Jr.",11,"50","45","50"],["Carson Wentz",2,"50","41","50"],["Colts Blue",0,"62","44","62"]]
+
+print (toreturn[0][0])
