@@ -12,7 +12,7 @@ def index():
 def ingest(playerid, score):
     conf.knight_db.put(f'CALL appendStream({playerid},{score})')
 
-@app.route('/node')
+@app.route('/node', methods=['POST'])
 def nodeIngest():
     playerid = request.args.get('p')
     score = request.args.get('s')
