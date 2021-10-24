@@ -45,11 +45,11 @@ class database:
             print(f'Error: {err}')
     def put(self,query):
         try:
-            cursor = self.database_connection.cursor()
+            cursor = self.db_conn.cursor()
         except:
             self.makeConn()
-            cursor = self.database_connection.cursor()
-        connection = self.database_connection
+            cursor = self.db_conn.cursor()
+        connection = self.db_conn.cursor()
             
         try:
             cursor.execute(query)
