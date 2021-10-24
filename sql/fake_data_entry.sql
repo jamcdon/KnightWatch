@@ -1,6 +1,6 @@
 USE KnightWatch;
 
-INSERT INTO player VALUES (1,'TY Hilton',13,40),(2,'Eric Fisher',79,61),(3,'Chris Reed',62,89),(4,'Ryan Kelly',78,48),(5,'Mark Glowinski',64,85),(6,'Braden Smith',72,48),(7,'Jack Doyle',84,26),(8,'Mo Alie-Cox',81,15),(9,'Zach Pascal',14,11),(10,'Michael Pittman Jr.',11,55),(11,'Carson Wentz',2,52)
+INSERT INTO player VALUES (1,'TY Hilton',13,40),(2,'Eric Fisher',79,61),(3,'Chris Reed',62,89),(4,'Ryan Kelly',78,48),(5,'Mark Glowinski',64,85),(6,'Braden Smith',72,48),(7,'Jack Doyle',84,26),(8,'Mo Alie-Cox',81,15),(9,'Zach Pascal',14,11),(10,'Michael Pittman Jr.',11,55),(11,'Carson Wentz',2,52),(12,'Colts Blue',00,40)
 ;
 #,(12,'Dr. Jaylon Abbott',80,29),(13,'Shaniya Schulist DDS',25,63),(14,'Nicklaus Lindgren II',21,4),(15,'Tobin Kemmer',54,83),(16,'Jaylen Larkin',31,25),(17,'Maye Olson',33,76),(18,'Miss Erna Miller',94,29),(19,'Adelbert Crist',7,37),(20,'Audrey Dickens Jr.',76,43),(21,'Caterina Renner',55,91),(22,'Dr. Willy Tillman',67,83),(23,'Winfield Jerde',16,87),(24,'Mrs. Neoma Wyman',36,7),(25,'Caitlyn Bartoletti',2,8),(26,'Miss Jalyn Collins Jr.',20,7),(27,'Prof. Lottie Ward DDS',32,44),(28,'Dr. Ricky Daniel V',62,35),(29,'Wendell Hintz',22,27),(30,'Dr. Otis Boyer',18,43),(31,'Dr. Jerad Parisian',42,70),(32,'Norwood Nader',61,47),(33,'Oran Crona',95,76),(34,'Dr. Lesley Homenick',89,61),(35,'Lavern Harber',38,6),(36,'Effie Wyman Sr.',40,96),(37,'Miss Vesta O\'Reilly Sr.',8,42),(38,'Gust Zulauf',86,3),(39,'Randall Windler',85,57),(40,'Domingo McLaughlin',92,56);
 

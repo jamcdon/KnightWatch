@@ -24,11 +24,5 @@ CALL updateExport(2);
 CALL appendStream(2,52);
 select * from streamData;
 
-INSERT INTO streamData(score) VALUES (50);
-    SET @streamID_out:=
-        (SELECT * FROM streamData
-        ORDER BY ID DESC LIMIT 1);
-    INSERT INTO streamDataPlayer(streamID, playerID) VALUES(@streamID_out, temp_playerID);
-
 
 select * from export;
