@@ -4,7 +4,7 @@ import flask_app.config as conf
 
 from flask import jsonify, request
 
-@app.route('/',methods=['GET'])
+@app.route('/get',methods=['GET'])
 def index():
     results = conf.knight_db.fetch('CALL frontEndCall()')
     print(jsonify(results))
