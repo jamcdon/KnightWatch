@@ -8,7 +8,7 @@ from flask import jsonify, request
 def index():
     results = conf.knight_db.fetch('CALL frontEndCall()')
     print(results)
-    return(jsonify(results))
+    return(str(results))
 
 @app.route('/post/<playerid>/<score>', methods=['POST'])
 def ingest(playerid, score):
