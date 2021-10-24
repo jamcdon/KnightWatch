@@ -8,6 +8,6 @@ from flask import jsonify
 def index():
     return()
 
-@app.route('/post/<playerid>/<score>', methods=['POST'],['GET'])
+@app.route('/post/<playerid>/<score>', methods=['POST','GET'])
 def ingest(playerid, score):
     conf.knight_db.put(f'CALL appendStream({playerid},{score})')
