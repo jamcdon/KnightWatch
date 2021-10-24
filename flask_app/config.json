@@ -1,0 +1,13 @@
+{
+    "databases":
+        {
+            "knight": 
+            {
+                "host":"159.122.181.11",
+                "port":"3306",
+                "user":"root",
+                "pass":"toor",
+                "name":"stonkShorts"
+            }
+        }
+}
