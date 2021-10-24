@@ -10,4 +10,4 @@ def index():
 
 @app.route('/post/<playerid>/<score>', methods=['POST'])
 def ingest(playerid, score):
-    headers_raw = conf.knight_db.put(f'CALL appendStream({playerid},{score})')
+    conf.knight_db.put(f'CALL appendStream({playerid},{score})')
