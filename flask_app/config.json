@@ -3,11 +3,11 @@
         {
             "knight": 
             {
-                "host":"159.122.181.11",
+                "host":"72.14.176.10",
                 "port":"3306",
-                "user":"root",
-                "pass":"toor",
-                "name":"stonkShorts"
+                "user":"knight",
+                "pass":"knight",
+                "name":"KnightWatch"
             }
         }
 }

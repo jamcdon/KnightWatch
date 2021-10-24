@@ -9,6 +9,6 @@ def index():
     
     return()
 
-@app.route('/post')
+@app.route('/post/<playerid>/<score>')
 def ingest():
     return()
