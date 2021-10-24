@@ -4,7 +4,7 @@ from mysql.connector import Error
 
 
 with open('./flask_app/config.json') as conf_file:
-    config = json.load(config_file)
+    config = json.load(conf_file)
     db_config = config['databases']
 
 
