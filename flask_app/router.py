@@ -10,7 +10,7 @@ def index():
     print(jsonify(results))
     return(jsonify(results))
 @app.route('/get1',methods=['GET'])
-def index():
+def other():
     final = ""
     toreturn = conf.knight_db.fetch('CALL frontEndCall()')
     def my_function(inpt, value):
