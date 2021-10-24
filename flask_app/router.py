@@ -33,13 +33,13 @@ def other():
         return tempDict
 
 
-for i in range(len(toreturn)):
-    final += json.dumps(my_function(toreturn[i], i))
-    if(i != (len(toreturn)-1)):
-        final += ","
+        for i in range(len(toreturn)):
+            final += json.dumps(my_function(toreturn[i], i))
+            if(i != (len(toreturn)-1)):
+                final += ","
 
 
-print(final)
+        print(final)
 
 @app.route('/post/<playerid>/<score>', methods=['POST'])
 def ingest(playerid, score):
