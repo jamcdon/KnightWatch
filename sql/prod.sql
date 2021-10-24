@@ -29,6 +29,7 @@ CREATE TABLE export (
     playerID 	INTEGER NOT NULL REFERENCES player(ID),
     aggregate3 	DECIMAL NOT NULL ,
     overall 	DECIMAL NOT NULL ,
+    score      DECIMAL NOT NULL,  #===========================================
     PRIMARY KEY (ID)
 );
 
@@ -44,7 +45,9 @@ DELIMITER $$
 CREATE PROCEDURE frontEndCall()
 
 BEGIN
-	SELECT player.name, player.number, export.aggregate3 as '3min', export.overall from export
+	SELECT player.name, player.number, export.aggregate3 as '3min', export.overall
+    , export.score #======================================================
+     from export
 	INNER JOIN player ON export.playerID = player.ID;
 END$$
 DELIMITER ;
@@ -78,10 +81,17 @@ BEGIN
 	INNER JOIN streamDataPlayer ON streamDataPlayer.streamID = streamData.ID
 	WHERE streamDataPlayer.playerID = inPlayerID);
 
+    #score ==========================================================
+    SET @temp_score:=
+    (SELECT streamData.score FROM streamData
+    INNER JOIN streamDataPlayer ON streamDataPlayer.streamID = streamData.ID
+    WHERE streamDataPlayer.playerID = inPlayerID);
+
 	UPDATE export 
 	SET 
 		export.aggregate3 = @temp_three,
 		export.overall = @temp_overall
+        , export.score = @temp_score
 	WHERE
 		playerID = inPlayerID;
 END$$
@@ -103,4 +113,4 @@ DELIMITER ;
 
 INSERT INTO player VALUES (1,'TY Hilton',13,40),(2,'Eric Fisher',79,61),(3,'Chris Reed',62,89),(4,'Ryan Kelly',78,48),(5,'Mark Glowinski',64,85),(6,'Braden Smith',72,48),(7,'Jack Doyle',84,26),(8,'Mo Alie-Cox',81,15),(9,'Zach Pascal',14,11),(10,'Michael Pittman Jr.',11,55),(11,'Carson Wentz',2,52),(12,'Colts Blue',00,40);
 
-INSERT INTO export(playerID, aggregate3, overall) VALUES (1,0,0),(2,0,0),(3,0,0),(4,0,0),(5,0,0),(6,0,0),(7,0,0),(8,0,0),(9,0,0),(10,0,0),(11,0,0),(12,0,0);
+INSERT INTO export(playerID, aggregate3, overall,score) VALUES (1,0,0,0),(2,0,0,0),(3,0,0,0),(4,0,0,0),(5,0,0,0),(6,0,0,0),(7,0,0,0),(8,0,0,0),(9,0,0,0),(10,0,0,0),(11,0,0,0),(12,0,0,0);
