@@ -85,7 +85,8 @@ BEGIN
     SET @temp_score:=
     (SELECT streamData.score FROM streamData
     INNER JOIN streamDataPlayer ON streamDataPlayer.streamID = streamData.ID
-    WHERE streamDataPlayer.playerID = inPlayerID);
+    WHERE streamDataPlayer.playerID = inPlayerID
+    ORDER BY streamData.ID DESC LIMIT 1);
 
 	UPDATE export 
 	SET 
