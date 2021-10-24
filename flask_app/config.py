@@ -1,5 +1,7 @@
 import json
-from flask_db2 import flask_db2
+import mysql.connector
+from mysql.connector import Error
+
 
 with open('./flask_app/config.json') as conf_file:
     config = json.load(config_file)
