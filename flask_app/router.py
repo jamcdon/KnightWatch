@@ -6,6 +6,7 @@ from flask import jsonify, request
 
 @app.route('/get',methods=['GET'])
 def index():
+    conf.knight_db.fetch('CALL frontEndCall()')
     return()
 
 @app.route('/post/<playerid>/<score>', methods=['POST'])
