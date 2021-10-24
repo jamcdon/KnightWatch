@@ -20,7 +20,8 @@ var app = new Vue({
 				aggregate:67,
 				class:""
 			}*/
-		]
+		],
+		playersTemp:[]
 	},
 	watch:{
 		count: function(){
@@ -51,5 +52,21 @@ var app = new Vue({
 		setColor(i, app._data.players[i].baseline, app._data.players[i].score)
 	}
 		}
-	}
+	},
+	
 });
+
+var xhr = new XMLHttpRequest();
+		xhr.open('GET','45.33.12.201/get');
+		xhr.onload = function(){
+			if (xhr.status === 200){
+				imported = JSON.parse(xhr.responseText);
+				for(i = 0; i < imported.length; i++){
+					app._data.playersTemp.push(imported[i]);
+				}
+				app._data.players = app.data.playersTemp;
+			}
+			else{
+				console.log(xhr.status)
+			}
+		}
