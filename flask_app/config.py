@@ -53,7 +53,8 @@ class database:
             
         try:
             cursor.execute(query)
-            connection.commit()
+            #connection.commit()
+            self.db_conn.commit()
         except Error as err:
             print(f"Error: '{err}'")
 
